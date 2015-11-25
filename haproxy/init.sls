@@ -6,7 +6,7 @@
 "Stage HAproxy basic files":
   file.managed:
     - name: /etc/default/haproxy
-    - source: salt://haproxy/files/default_haproxy
+    - source: salt://haproxy/default_haproxy
     - require:
       - pkg: haproxy
 
