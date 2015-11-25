@@ -88,4 +88,4 @@
     - upgrade: True
     - require:
       - service: "Start Docker Service"
-      - cmd: "Update PIP"
+#      - cmd: "Update PIP"
