@@ -1,7 +1,7 @@
 base:
 
   'G@roles:coolsite':
-    - pip.install
+    - pip
 #    - sites.coolsite
     - docker
     - nginx.docker-nojinja
