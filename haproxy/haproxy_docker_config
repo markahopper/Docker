@@ -27,7 +27,7 @@ listen SaltDemo 0.0.0.0:80
     option forwardfor    
 {% for imagename, info in salt['mine.get_docker'](interfaces="eth0").items() -%}
 {% for ip_ in info['ipv4'][80] %}
-{% if not ip_.startswith('10.17') %}
+{% if not ip_.startswith('10') %}
     server container{{ loop.index }} {{ ip_ }} check
 {% endif %}
 {% endfor -%}
