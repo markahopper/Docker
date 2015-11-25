@@ -5,7 +5,7 @@
     - name: 'saltme/nginx:0.6'
     - order: 20000
     - require:
-      - pip: "Docker Python API"
+#      - pip: "Docker Python API"
 
 "Spin up a container":
   dockerng.running:
