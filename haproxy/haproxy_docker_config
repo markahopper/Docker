@@ -21,7 +21,7 @@ listen SaltDemo 0.0.0.0:80
     stats enable
     stats uri /haproxy?stats
     stats realm Strictly\ Private
-    stats auth salt:saltme
+    stats auth saltstack:saltstack
     balance roundrobin
     option httpclose
     option forwardfor    
