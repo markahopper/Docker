@@ -2,8 +2,8 @@
 "Download nginx image":
   dockerng.image_present:
     - name: 'saltme/nginx:0.6'
-    - require:
-      - pip: "Docker Python API"
+#    - require:
+#      - pip: "Docker Python API"
 
 "Spin up container1":
   dockerng.running:
@@ -14,8 +14,8 @@
     - interactive: True
     - ports:
       - 80/tcp
-    - binds:
-      - /demo/web/site1:/usr/share/nginx/html:ro
+#    - binds:
+#      - /demo/web/site1:/usr/share/nginx/html:ro
     - port_bindings:
       - 8000:80/tcp
     - dns:
@@ -33,8 +33,8 @@
     - interactive: True
     - ports:
       - 80/tcp
-    - binds:
-      - /demo/web/site1:/usr/share/nginx/html:ro
+#    - binds:
+#      - /demo/web/site1:/usr/share/nginx/html:ro
     - port_bindings:
       - 8001:80/tcp
     - dns:
