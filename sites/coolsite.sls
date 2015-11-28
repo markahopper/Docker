@@ -23,14 +23,14 @@
 
 "Pull in ACME site code":
   git.latest:
-    - name: git@github.com:trebortech/ACME.git
+    - name: git@github.com:markahopper/ACME.git
     - target: /stage/ACME
 #  - rev: {{ env }}
     - branch: master
 #    - identity: /root/.ssh/{{ sshkey }}.priv
     - force_checkout: True
-    - require:
-        - pkg: 'GIT software'
+#    - require:
+#        - pkg: 'GIT software'
 
 ####### UPDATE GIT CONFIG  #############
 "Setup {{ env }} email config":
