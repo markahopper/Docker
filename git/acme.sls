@@ -1,36 +1,36 @@
 ######### PULL IN OTHER REQUIRED STATE FILES  ########
-include:
-  - .init
-  - nginx
+#include:
+#  - .init
+#  - nginx
 
 
-{% set workingdir = "/stage/acme" %}
-{% set sshkey = "ssh-key-acme" %}
-{% set env = grains.get('branch', 'dev') %}
+#{% set workingdir = "/stage/acme" %}
+#{% set sshkey = "ssh-key-acme" %}
+#{% set env = grains.get('branch', 'dev') %}
 
 ####### STAGE KEYS #####################
 
-"Push ssh keys for github":
-  file.managed:
-    - name: /root/.ssh/{{ sshkey }}.priv
-    - source: salt://files/{{ sshkey }}.priv
-    - makedirs: True
-    - mode: 600
-    - user: root
-    - group: root
+#"Push ssh keys for github":
+#  file.managed:
+#    - name: /root/.ssh/{{ sshkey }}.priv
+#    - source: salt://files/{{ sshkey }}.priv
+#    - makedirs: True
+#    - mode: 600
+#    - user: root
+#    - group: root
 
 ####### PULL IN ACME DEV CODE ##########
 
 "Pull in ACME site code":
   git.latest:
     - name: git@github.com:trebortech/ACME.git
-    - target: {{ workingdir }}
-    - rev: {{ env }}
-    - branch: {{ env }}
-    - identity: /root/.ssh/{{ sshkey }}.priv
+    - target: /stage/ACME
+#    - rev: {{ env }}
+    - branch: master
+#    - identity: /root/.ssh/{{ sshkey }}.priv
     - force_checkout: True
-    - require:
-        - pkg: 'GIT software'
+#    - require:
+#        - pkg: 'GIT software'
 
 
 
@@ -38,16 +38,16 @@ include:
 "Setup {{ env }} email config":
   git.config_set:
     - name: user.email
-    - value: rbooth@saltstack.com
-    - repo: {{ workingdir }}
+    - value: mhopper@saltstack.com
+    - repo: /stage/ACME
     - require:
         - git: "Pull in ACME site code"
 
 "Setup {{ env }} name config":
   git.config_set:
     - name: user.name
-    - value: trebortech
-    - repo: {{ workingdir }}
+    - value: markahopper
+    - repo: /stage/ACME
     - require:
         - git: "Pull in ACME site code"
 
@@ -55,7 +55,7 @@ include:
   git.config_set:
     - name: core.editor
     - value: vim
-    - repo: {{ workingdir }}
+    - repo: /stage/ACME
     - require:
         - git: "Pull in ACME site code"
 
