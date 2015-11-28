@@ -2,6 +2,7 @@ base:
 
   'G@roles:coolsite':
     - pip
+    - git
     - sites.coolsite
     - docker
     - nginx.docker-nojinja
