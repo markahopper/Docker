@@ -24,20 +24,20 @@
 "Pull in ACME site code":
   git.latest:
     - name: git@github.com:markahopper/ACME.git
-    - target: /stage/ACME
+    - target: /demo/web/site1
 #  - rev: {{ env }}
     - branch: master
 #    - identity: /root/.ssh/{{ sshkey }}.priv
     - force_checkout: True
-#    - require:
-#        - pkg: 'GIT software'
+    - require:
+        - pkg: 'GIT software'
 
 ####### UPDATE GIT CONFIG  #############
 "Setup {{ env }} email config":
   git.config_set:
     - name: user.email
     - value: mhopper@saltstack.com
-    - repo: /stage/ACME
+    - repo: /demo/web/site1
     - require:
         - git: "Pull in ACME site code"
 
@@ -45,7 +45,7 @@
   git.config_set:
     - name: user.name
     - value: markahopper
-    - repo: /stage/ACME
+    - repo: /demo/web/site1
     - require:
         - git: "Pull in ACME site code"
 
@@ -53,7 +53,7 @@
   git.config_set:
     - name: core.editor
     - value: vim
-    - repo: /stage/ACME
+    - repo: /demo/web/site1
     - require:
         - git: "Pull in ACME site code"
 
