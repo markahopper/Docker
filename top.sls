@@ -11,8 +11,9 @@ base:
   'G@roles:coolsite-ha':
     - haproxy.config
 
-  'dockerhost3':
+  'G@roles:dockerhost':
     - pip
+    - git
     - sites.coolsite
     - docker
     - nginx.docker-nojinja
