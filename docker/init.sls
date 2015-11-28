@@ -72,6 +72,7 @@
     - name: docker-engine
     - refresh: True
     - pkg: docker-engine
+    - reload_modules: true
 
 "Start Docker Service":
   service.running:
