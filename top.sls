@@ -2,7 +2,7 @@ base:
 
   'G@roles:coolsite':
     - pip
-#    - sites.coolsite
+    - sites.coolsite
     - docker
     - nginx.docker-nojinja
 #    - slack.test
