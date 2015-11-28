@@ -23,7 +23,7 @@
 
 "Pull in ACME site code":
   git.latest:
-    - name: https://github.com:markahopper/ACME.git
+    - name: https://github.com/markahopper/ACME.git
     - target: /demo/web/site1
 #  - rev: {{ env }}
     - branch: master
