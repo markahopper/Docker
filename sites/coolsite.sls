@@ -4,9 +4,9 @@
 #include:
 #  - git
 
-#{% set workingdir = "/demo/web/site1" %}
-#{% set sshkey = "ssh-key-acme" %}
-#{% set env = grains.get('branch', 'dev') %}
+# {% set workingdir = "/demo/web/site1" %}
+# {% set sshkey = "ssh-key-acme" %}
+# {% set env = grains.get('branch', 'dev') %}
 
 ####### STAGE KEYS #####################
 
@@ -23,7 +23,7 @@
 
 "Pull in ACME site code":
   git.latest:
-    - name: git@github.com:markahopper/ACME.git
+    - name: https://github.com:markahopper/ACME.git
     - target: /demo/web/site1
 #  - rev: {{ env }}
     - branch: master
