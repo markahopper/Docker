@@ -1,15 +1,15 @@
 
 {% set workingdir = "/demo/web/site1" %}
-{% set sshkey = "ssh-key-acme" %}
-{% set env = grains.get('branch', 'dev') %}
+# {% set sshkey = "ssh-key-acme" %}
+# {% set env = grains.get('branch', 'dev') %}
 
 "Pull in ACME site code":
   git.latest:
-    - name: git@github.com:trebortech/ACME.git
+    - name: https://github.com/markahopper/ACME.git
     - target: {{ workingdir }}
-    - rev: {{ env }}
-    - branch: {{ env }}
-    - identity: /root/.ssh/{{ sshkey }}.priv
+#    - rev: {{ env }}
+    - branch: master
+#    - identity: /root/.ssh/{{ sshkey }}.priv
     - force_checkout: True
 
 "Website Update":
