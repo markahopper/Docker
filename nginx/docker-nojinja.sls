@@ -14,8 +14,8 @@
     - interactive: True
     - ports:
       - 80/tcp
-#    - binds:
-#      - /demo/web/site1:/usr/share/nginx/html:ro
+    - binds:
+      - /demo/web/site1:/usr/share/nginx/html:rw
     - port_bindings:
       - 8000:80/tcp
     - dns:
@@ -33,8 +33,8 @@
     - interactive: True
     - ports:
       - 80/tcp
-#    - binds:
-#      - /demo/web/site1:/usr/share/nginx/html:ro
+    - binds:
+      - /demo/web/site1:/usr/share/nginx/html:rw
     - port_bindings:
       - 8001:80/tcp
     - dns:
