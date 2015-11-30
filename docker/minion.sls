@@ -1,7 +1,7 @@
 "Spin up container1":
   dockerng.running:
     - name: Container1
-    - image: minion:v0.5
+    - image: markahopper/minion:v0.6
     - hostname: web1
     - tty: True
     - interactive: True
