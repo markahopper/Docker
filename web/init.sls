@@ -11,7 +11,7 @@ nginx:
 /usr/share/nginx/html/index.html:
   file:
     - managed
-    - source: salt://nginx/index.html
+    - source: salt://web/index.html
     - template: jinja
     - require:
       - pkg: nginx
