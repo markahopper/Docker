@@ -18,5 +18,5 @@ spin_up_container1:
 mine_flush:
   cmd.run:
     - name: salt-call mine.flush
-  require:
-    - spin_up_container1
+#  require:
+#    - spin_up_container1
