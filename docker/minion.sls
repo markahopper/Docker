@@ -1,4 +1,4 @@
-"Spin up container1":
+spin_up_container1:
   dockerng.running:
     - name: Container1
     - image: markahopper/minion:v0.6
@@ -19,4 +19,4 @@ mine_flush:
   cmd.run:
     - name: salt-call mine.flush
   require:
-    - "Spin up container1"
+    - spin_up_container1
