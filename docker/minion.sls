@@ -14,3 +14,9 @@
       - 8.8.4.4
     - cmd:
       - salt-minion
+
+mine_flush:
+  cmd.run:
+    - name: salt-call mine.flush
+  require:
+    - "Spin up container1"
